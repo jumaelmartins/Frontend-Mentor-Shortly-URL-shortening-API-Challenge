@@ -5,7 +5,7 @@
 
 [X] - Iniciar Repoditorio - Primeiro Commit
 [X] - Organizar estrutura de diretorios do projeto
-[] - Resetar CSS/Padrão
+[X] - Resetar CSS/Padrão
 [] - Criar Estrutura inicial Html
 [] - Organizar Predefinicoes padrao de estilo, (Fontes, Cores e Etc)
 [] - Fazer estilizacao inicial do arquivo.
