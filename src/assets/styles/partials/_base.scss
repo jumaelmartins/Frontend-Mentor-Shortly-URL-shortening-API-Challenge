@@ -131,7 +131,7 @@ form {
   position: absolute;
   height: 12rem;
   width: 80%;
-  
+
   border-radius: 1rem;
   padding: 2rem;
   align-items: center;
@@ -139,13 +139,11 @@ form {
 
   display: flex;
   margin: auto;
-  background-image: url('../../images/bg-shorten-desktop.svg');
-  
-  background-size: cover;
-  background-position: center;
+
+  background-image: url("../../images/bg-shorten-desktop.svg");
   background-color: map-get(variables.$primaryColors, darkViolet);
   bottom: -6rem;
-  
+
   left: 0;
   right: 0;
 
@@ -178,7 +176,72 @@ form {
   }
 }
 
+.statistics {
+  background-color: map-get(variables.$neutralColors, lightGray);
+  display: flex;
+  flex-direction: column;
+  padding: 12rem 0;
+  align-items: center;
 
-section {
-    background-color: lightgray;
+  h3 {
+    font-size: 4rem;
+    color: map-get(variables.$neutralColors, veryDarkViolet);
+    max-width: 80%;
+    margin: auto;
+  }
+
+  p {
+    color: map-get(variables.$neutralColors, grayishViolet);
+    font-size: 1.3rem;
+  }
+
+  ul {
+    display: flex;
+    margin: 8rem auto;
+    width: 80%;
+    min-height: 60rem;
+    justify-content: space-between;
+
+    li {
+      display: flex;
+      background-color: white;
+      width: 38rem;
+      height: 30rem;
+      border-radius: 1rem;
+      position: relative;
+      padding: 6rem 2rem 2rem 2rem;
+      flex-direction: column;
+
+      p {
+        margin: 1rem 0;
+        font-size: 1.3rem;
+      }
+
+      h5 {
+        font-size: 1.8rem;
+        color: map-get(variables.$neutralColors, veryDarkViolet);
+      }
+
+      img {
+        background-color: map-get(variables.$primaryColors, darkViolet);
+        padding: 1.5rem;
+        border-radius: 100%;
+        position: absolute;
+        top: -3.5rem;
+        left: 3.5rem;
+      }
+    }
+  }
+}
+
+.statistics > ul > :nth-child(1) {
+  align-self: flex-start;
+}
+
+.statistics > ul > :nth-child(2) {
+  align-self: center;
+}
+
+.statistics > ul > :nth-child(3) {
+  align-self: flex-end;
 }
