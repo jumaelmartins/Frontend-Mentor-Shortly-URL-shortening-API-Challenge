@@ -9,7 +9,8 @@
 [X] - Criar Estrutura inicial Html
 [X] - Organizar Predefinicoes padrao de estilo, (Fontes, Cores e Etc)
 [X] - Estilizar Sessao Main
-[] - Estilizar Sessao Statistics
+[X] - Estilizar Sessao Statistics
+[X] - Estilizar Sessão Boost your links
 [] - Estilizar Footer
 
 [] - Criar Funcao para Consumo da API
