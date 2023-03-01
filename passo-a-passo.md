@@ -8,7 +8,9 @@
 [X] - Resetar CSS/Padrão
 [X] - Criar Estrutura inicial Html
 [X] - Organizar Predefinicoes padrao de estilo, (Fontes, Cores e Etc)
-[] - Fazer estilizacao inicial do arquivo.
+[X] - Estilizar Sessao Main
+[] - Estilizar sessao do meio
+[] - Estilizar Footer
 
 [] - Criar Funcao para Consumo da API
 [] - Tratar dados da API
