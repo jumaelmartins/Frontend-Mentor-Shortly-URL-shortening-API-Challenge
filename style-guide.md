@@ -33,7 +33,7 @@ The designs were created to the following widths:
 
 ### Fonts
 
-- Family: [Poppins](https://fonts.google.com/specimen/Poppins)
+- Family: [Poppins]('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap')
 - Weights: 500, 700
 
 ## Icons
