@@ -16,7 +16,7 @@
 [X] - Criar Funcao para Consumo da API
 [X] - Tratar dados da API
 [X] - Exibir dados da API na Pagina
-[] - Validação no Form
+[X] - Validação no Form
 [] - Criar funcao para salvar Alteracoes no Local Storage
 
 [] - Tratar respionsividade

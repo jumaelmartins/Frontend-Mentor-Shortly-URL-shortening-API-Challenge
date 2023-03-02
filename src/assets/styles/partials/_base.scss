@@ -132,11 +132,11 @@ form {
 
   border-radius: 1rem;
   padding: 2rem;
-  align-items: center;
   justify-content: center;
 
   display: flex;
   margin: auto;
+  flex-direction: column;
 
   background-image: url("../../../../src/assets/images/bg-shorten-desktop.svg");
   background-color: map-get(variables.$primaryColors, darkViolet);
@@ -159,6 +159,7 @@ form {
     width: 88rem;
     padding: 2rem;
     outline: none;
+    max-width: 100%;
   }
 
   button {
@@ -167,9 +168,36 @@ form {
     cursor: pointer;
     color: white;
     background-color: map-get(variables.$primaryColors, cyan);
+    max-width: 100%;
 
     &:hover {
       background-color: map-get(variables.$primaryColors, lightCyan);
+    }
+  }
+
+  .warning {
+    outline: solid 2px red;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  fieldset {
+    border: none;
+    display: flex;
+    width: 100%;
+
+    max-width: 100%;
+    justify-content: center;
+    padding: 0 2rem;
+
+    label {
+      width: 100%;
+      color: red;
+      font-size: 1.3rem;
+      margin: 0 1rem;
+      justify-self: flex-start;
     }
   }
 }
@@ -276,7 +304,7 @@ form {
   min-height: 20rem;
   align-items: center;
   justify-content: center;
-  
+
   background-image: url("../../../../src/assets/images/bg-boost-desktop.svg");
   background-size: cover;
 
