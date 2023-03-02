@@ -17,8 +17,9 @@
 [X] - Tratar dados da API
 [X] - Exibir dados da API na Pagina
 [X] - Validação no Form
-[] - Criar funcao para salvar Alteracoes no Local Storage
+[X] - Função para Copiar a URL encurtada.
 
+[] - Criar funcao para salvar Alteracoes no Local Storage
 [] - Tratar respionsividade
 [] - Revisar Codigo.
 

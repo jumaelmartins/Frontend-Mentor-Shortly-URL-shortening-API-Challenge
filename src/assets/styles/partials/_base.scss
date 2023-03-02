@@ -129,15 +129,14 @@ form {
   position: absolute;
   height: 12rem;
   width: 80%;
-
   border-radius: 1rem;
+
   padding: 2rem;
   justify-content: center;
-
   display: flex;
   margin: auto;
-  flex-direction: column;
 
+  flex-direction: column;
   background-image: url("../../../../src/assets/images/bg-shorten-desktop.svg");
   background-color: map-get(variables.$primaryColors, darkViolet);
   bottom: -6rem;
@@ -148,18 +147,18 @@ form {
   input,
   button {
     border-radius: 1rem;
-    height: 2rem;
     margin: 0 1rem;
     height: 5rem;
     border: none;
     font-size: 1.8rem;
+    max-width: 100%;
+    flex-shrink: 3;
   }
 
   input {
-    width: 88rem;
     padding: 2rem;
     outline: none;
-    max-width: 100%;
+    width: 95%;
   }
 
   button {
@@ -168,7 +167,6 @@ form {
     cursor: pointer;
     color: white;
     background-color: map-get(variables.$primaryColors, cyan);
-    max-width: 100%;
 
     &:hover {
       background-color: map-get(variables.$primaryColors, lightCyan);
@@ -187,7 +185,6 @@ form {
     border: none;
     display: flex;
     width: 100%;
-
     max-width: 100%;
     justify-content: center;
     padding: 0 2rem;
