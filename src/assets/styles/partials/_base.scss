@@ -138,7 +138,7 @@ form {
   display: flex;
   margin: auto;
 
-  background-image: url("../../images/bg-shorten-desktop.svg");
+  background-image: url("../../../../src/assets/images/bg-shorten-desktop.svg");
   background-color: map-get(variables.$primaryColors, darkViolet);
   bottom: -6rem;
 
@@ -276,6 +276,9 @@ form {
   min-height: 20rem;
   align-items: center;
   justify-content: center;
+  
+  background-image: url("../../../../src/assets/images/bg-boost-desktop.svg");
+  background-size: cover;
 
   h2 {
     color: white;
@@ -312,7 +315,7 @@ footer {
   div {
     color: white;
     a {
-        color: inherit;
+      color: inherit;
     }
   }
 
@@ -345,7 +348,7 @@ footer > ul > :nth-child(2) > div {
     color: white;
 
     &:hover {
-        color: aqua;
+      color: aqua;
     }
   }
 }
@@ -355,5 +358,33 @@ footer > ul > :nth-child(3) > img {
   cursor: pointer;
   &:hover {
     color: cadetblue;
+  }
+}
+
+.shortenLinks {
+  background-color: map-get(variables.$neutralColors, lightGray);
+  display: flex;
+  padding: 8rem 0;
+  ul {
+    min-width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    li {
+      height: 4rem;
+      background-color: white;
+      width: 100%;
+      margin: 1rem 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 0.3rem;
+      padding: 1rem;
+
+      a {
+        margin: 0 1rem;
+      }
+    }
   }
 }
