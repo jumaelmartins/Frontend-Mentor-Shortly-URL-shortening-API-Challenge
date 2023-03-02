@@ -11,10 +11,10 @@
 [X] - Estilizar Sessao Main
 [X] - Estilizar Sessao Statistics
 [X] - Estilizar Sessão Boost your links
-[] - Estilizar Footer
+[X] - Estilizar Footer
 
-[] - Criar Funcao para Consumo da API
-[] - Tratar dados da API
+[X] - Criar Funcao para Consumo da API
+[X] - Tratar dados da API
 [] - Exibir dados da API na Pagina
 [] - Criar funcao para salvar Alteracoes no Local Storage
 
