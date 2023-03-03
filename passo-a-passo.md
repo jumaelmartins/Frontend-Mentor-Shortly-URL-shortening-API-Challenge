@@ -19,7 +19,9 @@
 [X] - Validação no Form
 [X] - Função para Copiar a URL encurtada.
 
-[] - Criar funcao para salvar Alteracoes no Local Storage
+[X] - Criar funcao para salvar Alteracoes no Local Storage
+[X] - Criar funcao para carregar os items do local storage na pagina;
+[] - Criar função para limpar os items do local storage
 [] - Tratar respionsividade
 [] - Revisar Codigo.
 
