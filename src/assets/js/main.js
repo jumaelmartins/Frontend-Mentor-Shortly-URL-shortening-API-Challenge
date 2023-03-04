@@ -8,46 +8,82 @@ const warning = document.querySelector("label");
 const range = document.createRange();
 let itemsToLocalStorage = [];
 
-
-const addItemToLocalStorage = async (item) => {
-  if (localStorage.itemToStorage) {
-    itemsToLocalStorage = JSON.parse(localStorage.getItem("itemToStorage"));
-  }
-
-  let ul = document.querySelector(".shortenLinks > :first-child")
-  ul.toString
-  itemsToLocalStorage.push(ul.innerHTML);
-  localStorage.itemToStorage = JSON.stringify(itemsToLocalStorage);
-};
-
 const loadLocalStorageItem = async (item) => {
   item.innerHTML = "";
 
   if (localStorage.itemToStorage) {
     itemsToLocalStorage = JSON.parse(localStorage.getItem("itemToStorage"));
   }
+  for (let localItem in itemsToLocalStorage) {
+    const li = itemsToLocalStorage[localItem].html;
+    item.innerHTML += li;
+  }
+  const copy = document.querySelectorAll(".copy");
+  deleteItemLocalStorage(shortenLinkToRender);
+  copyLink(copy);
+};
 
-for (let localItem in itemsToLocalStorage) {
-  item.innerHTML = itemsToLocalStorage[localItem];
-  console.log(itemsToLocalStorage[localItem])
-}
-}
+const addItemToLocalStorage = async (html) => {
+  if (localStorage.itemToStorage) {
+    itemsToLocalStorage = JSON.parse(localStorage.getItem("itemToStorage"));
+  }
+  const id = Math.floor(Math.random() * 1000);
+  const ul = document.createElement("ul");
+  ul.innerHTML = await html;
+  const li = ul.querySelector(":first-child");
+  li.classList.add(`${id}`);
+  const obj = {
+    html: li.outerHTML,
+    id: id,
+  };
+  itemsToLocalStorage.push(obj);
+  localStorage.itemToStorage = JSON.stringify(itemsToLocalStorage);
+};
 
-loadLocalStorageItem(shortenLinkToRender);
+const deleteItemLocalStorage = async (li) => {
+  if (localStorage.itemToStorage) {
+    itemsToLocalStorage = JSON.parse(localStorage.getItem("itemToStorage"));
+  }
+  await li;
+  let deleteButton = document.querySelectorAll(".trash");
 
+  deleteButton = Array.from(deleteButton);
+
+  let id = 0;
+  deleteButton.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      const value = e.target.closest("li").classList.value;
+      id = value;
+      newArray.forEach((item) => {
+        if (item.id === parseInt(id)) {
+          array2 = array2.filter((link) => {
+            return link !== item;
+          });
+          itemsToLocalStorage = [];
+          localStorage.itemToStorage = JSON.stringify(array2);
+        }
+      });
+    });
+  });
+
+  const newArray = Array.from(itemsToLocalStorage);
+  let array2 = [...newArray];
+};
+
+
+/* STOP */
 
 const shorteningLinkByClick = async () => {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const url = input.value;
     const validation = await formValidate(url);
-
-    validation
-      ? (shortenLinkToRender.innerHTML += await shorteningLinkToHtml(url))
-      : "";
-    console.log(shortenLinkToRender)
-    addItemToLocalStorage(shortenLinkToRender);
-    copyLink();
+    
+    if (validation) {
+      const shortenUrlHtml = await shorteningLinkToHtml(url);
+      shortenLinkToRender.innerHTML += shortenUrlHtml;
+      addItemToLocalStorage(shortenUrlHtml);
+    }
   });
 };
 
@@ -55,7 +91,7 @@ const formValidate = async (value) => {
   if ((await shorteningLink(value)) === false || !value) {
     input.classList.add("warning");
     warning.classList.remove("hidden");
-
+    
     return false;
   } else if (value) {
     input.classList.remove("warning");
@@ -64,32 +100,33 @@ const formValidate = async (value) => {
   }
 };
 
-const copyLink = async () => {
-  const copy = document.querySelectorAll(".copy");
-
+const copyLink = (copy) => {
   copy.forEach((item) => {
     const shortenLinkToCopy = document.querySelector(".shortenLinkToCopy");
 
     item.addEventListener("click", (e) => {
-      e.preventDefault();
       range.selectNode(shortenLinkToCopy);
       window.getSelection().removeAllRanges();
       window.getSelection().addRange(range);
       document.execCommand("copy");
       window.getSelection().removeAllRanges();
       console.log(item, shortenLinkToCopy);
-      item.innerHTML = "Copied!"
-      item.classList.add("copied")
-
+      item.innerHTML = "Copied!";
+      item.classList.add("copied");
+      item.style.background = "darkBlue";
     });
   });
 };
 
-
-
-
 const init = () => {
   shorteningLinkByClick();
+  loadLocalStorageItem(shortenLinkToRender);
+  deleteItemLocalStorage(shortenLinkToRender);
 };
 
 init();
+
+document.addEventListener("click", (e)=> {
+  loadLocalStorageItem(shortenLinkToRender);
+  deleteItemLocalStorage(shortenLinkToRender);
+})

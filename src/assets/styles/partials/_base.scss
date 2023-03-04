@@ -454,3 +454,18 @@ footer > ul > :nth-child(3) > img {
     background-color: map-get(variables.$neutralColors, veryDarkBlue);
   }
 }
+
+.trash {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 100%;
+  margin: 0;
+  background-color: map-get(variables.$neutralColors, lightGray);
+  cursor: pointer;
+
+  &:hover {
+    background-color: map-get(variables.$neutralColors, veryDarkBlue);
+    color: white;
+  }
+}
+    
