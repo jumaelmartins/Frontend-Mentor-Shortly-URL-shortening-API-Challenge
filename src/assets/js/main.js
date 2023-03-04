@@ -18,9 +18,8 @@ const loadLocalStorageItem = async (item) => {
     const li = itemsToLocalStorage[localItem].html;
     item.innerHTML += li;
   }
-  const copy = document.querySelectorAll(".copy");
+  copyLink();
   deleteItemLocalStorage(shortenLinkToRender);
-  copyLink(copy);
 };
 
 const addItemToLocalStorage = async (html) => {
@@ -59,6 +58,7 @@ const deleteItemLocalStorage = async (li) => {
           array2 = array2.filter((link) => {
             return link !== item;
           });
+          
           itemsToLocalStorage = [];
           localStorage.itemToStorage = JSON.stringify(array2);
         }
@@ -100,10 +100,14 @@ const formValidate = async (value) => {
   }
 };
 
-const copyLink = (copy) => {
+const copyLink = async () => {
+
+  const copy = document.querySelectorAll(".copy");
+
   copy.forEach((item) => {
     const shortenLinkToCopy = document.querySelector(".shortenLinkToCopy");
 
+    
     item.addEventListener("click", (e) => {
       range.selectNode(shortenLinkToCopy);
       window.getSelection().removeAllRanges();
@@ -128,5 +132,5 @@ init();
 
 document.addEventListener("click", (e)=> {
   loadLocalStorageItem(shortenLinkToRender);
-  deleteItemLocalStorage(shortenLinkToRender);
+  // deleteItemLocalStorage(shortenLinkToRender);
 })

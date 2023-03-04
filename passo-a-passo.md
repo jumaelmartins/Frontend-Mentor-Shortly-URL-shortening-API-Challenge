@@ -23,6 +23,7 @@
 [X] - Criar funcao para carregar os items do local storage na pagina;
 [X] - Criar função para limpar os items do local storage
 [] - Tratar respionsividade
+[] - Fazer Menu Mobile
 [] - Revisar Codigo.
 
 
