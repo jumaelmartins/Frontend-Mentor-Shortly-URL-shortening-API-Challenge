@@ -7,6 +7,16 @@ const shortenLinkToRender = document.querySelector(".shortenLink");
 const warning = document.querySelector("label");
 const range = document.createRange();
 let itemsToLocalStorage = [];
+const menuButton = document.querySelector(".menuButton");
+const menuItems = document.querySelectorAll(".toggle");
+const menuContainer = document.querySelector("nav");
+
+menuButton.addEventListener("click", (e) => {
+  menuItems.forEach((item) => {
+    item.classList.toggle("toggle")
+  })
+  menuContainer.classList.toggle("white");
+});
 
 const loadLocalStorageItem = async (item) => {
   item.innerHTML = "";
@@ -58,7 +68,7 @@ const deleteItemLocalStorage = async (li) => {
           array2 = array2.filter((link) => {
             return link !== item;
           });
-          
+
           itemsToLocalStorage = [];
           localStorage.itemToStorage = JSON.stringify(array2);
         }
@@ -70,7 +80,6 @@ const deleteItemLocalStorage = async (li) => {
   let array2 = [...newArray];
 };
 
-
 /* STOP */
 
 const shorteningLinkByClick = async () => {
@@ -78,7 +87,7 @@ const shorteningLinkByClick = async () => {
     e.preventDefault();
     const url = input.value;
     const validation = await formValidate(url);
-    
+
     if (validation) {
       const shortenUrlHtml = await shorteningLinkToHtml(url);
       shortenLinkToRender.innerHTML += shortenUrlHtml;
@@ -91,7 +100,7 @@ const formValidate = async (value) => {
   if ((await shorteningLink(value)) === false || !value) {
     input.classList.add("warning");
     warning.classList.remove("hidden");
-    
+
     return false;
   } else if (value) {
     input.classList.remove("warning");
@@ -101,13 +110,11 @@ const formValidate = async (value) => {
 };
 
 const copyLink = async () => {
-
   const copy = document.querySelectorAll(".copy");
 
   copy.forEach((item) => {
     const shortenLinkToCopy = document.querySelector(".shortenLinkToCopy");
 
-    
     item.addEventListener("click", (e) => {
       range.selectNode(shortenLinkToCopy);
       window.getSelection().removeAllRanges();
@@ -130,10 +137,10 @@ const init = () => {
 
 init();
 
-document.addEventListener("click", (e)=> {
+document.addEventListener("click", (e) => {
   loadLocalStorageItem(shortenLinkToRender);
   // deleteItemLocalStorage(shortenLinkToRender);
-})
+});
 
 /*
 <svg width="64" height="64" class="trash" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
