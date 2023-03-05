@@ -13,8 +13,8 @@ const menuContainer = document.querySelector("nav");
 
 menuButton.addEventListener("click", (e) => {
   menuItems.forEach((item) => {
-    item.classList.toggle("toggle")
-  })
+    item.classList.toggle("toggle");
+  });
   menuContainer.classList.toggle("white");
 });
 
@@ -28,7 +28,6 @@ const loadLocalStorageItem = async (item) => {
     const li = itemsToLocalStorage[localItem].html;
     item.innerHTML += li;
   }
-  copyLink();
   deleteItemLocalStorage(shortenLinkToRender);
 };
 
@@ -40,6 +39,7 @@ const addItemToLocalStorage = async (html) => {
   const ul = document.createElement("ul");
   ul.innerHTML = await html;
   const li = ul.querySelector(":first-child");
+  
   li.classList.add(`${id}`);
   const obj = {
     html: li.outerHTML,
@@ -114,17 +114,17 @@ const copyLink = async () => {
 
   copy.forEach((item) => {
     const shortenLinkToCopy = document.querySelector(".shortenLinkToCopy");
-
     item.addEventListener("click", (e) => {
       range.selectNode(shortenLinkToCopy);
       window.getSelection().removeAllRanges();
       window.getSelection().addRange(range);
       document.execCommand("copy");
       window.getSelection().removeAllRanges();
-      console.log(item, shortenLinkToCopy);
       item.innerHTML = "Copied!";
       item.classList.add("copied");
       item.style.background = "darkBlue";
+      console.log(item.closest("ul"))
+      addItemToLocalStorage(item.closest("ul"));
     });
   });
 };
@@ -133,13 +133,13 @@ const init = () => {
   shorteningLinkByClick();
   loadLocalStorageItem(shortenLinkToRender);
   deleteItemLocalStorage(shortenLinkToRender);
+  copyLink();
 };
 
 init();
 
 document.addEventListener("click", (e) => {
   loadLocalStorageItem(shortenLinkToRender);
-  // deleteItemLocalStorage(shortenLinkToRender);
 });
 
 /*
