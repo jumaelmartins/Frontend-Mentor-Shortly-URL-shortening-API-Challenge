@@ -1,0 +1,107 @@
+@use "variables";
+@use "base";
+
+.statistics {
+    background-color: map-get(variables.$neutralColors, lightGray);
+    display: flex;
+    flex-direction: column;
+    padding: 12rem 0;
+    align-items: center;
+  
+    h3 {
+      font-size: 4rem;
+      color: map-get(variables.$neutralColors, veryDarkViolet);
+      max-width: 80%;
+      margin: auto;
+    }
+  
+    p {
+      color: map-get(variables.$neutralColors, grayishViolet);
+      font-size: 1.3rem;
+    }
+  
+    ul {
+  
+      @media screen and (max-width: 940px) { 
+        min-height: 48rem;
+      }
+  
+      display: flex;
+      margin: 8rem auto;
+      width: 80%;
+      min-height: 36rem;
+      justify-content: space-between;
+  
+      li {
+        display: flex;
+        background-color: white;
+        width: 38rem;
+        min-height: 28rem;
+        border-radius: 1rem;
+        position: relative;
+        padding: 6rem 2rem 2rem 2rem;
+        flex-direction: column;
+        z-index: 2;
+  
+        @media screen and (max-width: 940px) {
+          min-height: 38rem;
+        }
+    
+  
+        max-width: 100%;
+        p {
+          margin: 1rem 0;
+          font-size: 1.5rem;
+        }
+  
+        h5 {
+          font-size: 2rem;
+          color: map-get(variables.$neutralColors, veryDarkViolet);
+        }
+  
+        img {
+          background-color: map-get(variables.$primaryColors, darkViolet);
+          padding: 1.5rem;
+          border-radius: 100%;
+          position: absolute;
+          top: -3.5rem;
+          left: 3.5rem;
+        }
+      }
+    }
+  }
+  
+  .statistics > ul > :nth-child(1) {
+    align-self: flex-start;
+  }
+  
+  .statistics > ul > :nth-child(2) {
+    align-self: center;
+    margin: 0 2rem;
+  
+    &::before {
+      content: "";
+      height: 1rem;
+      width: 2rem;
+      background-color: map-get(variables.$primaryColors, cyan);
+      position: absolute;
+      left: -2rem;
+      top: 9rem;
+      z-index: 1;
+    }
+  
+    &::after {
+      content: "";
+      height: 1rem;
+      width: 2rem;
+      background-color: map-get(variables.$primaryColors, cyan);
+      position: absolute;
+      right: -2rem;
+      top: 9rem;
+      z-index: 1;
+    }
+  }
+  
+  .statistics > ul > :nth-child(3) {
+    align-self: flex-end;
+  }

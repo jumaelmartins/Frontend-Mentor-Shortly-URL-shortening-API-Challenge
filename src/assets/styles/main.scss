@@ -1,4 +1,12 @@
 @use "./partials/base";
+@use "./partials/header";
+@use "./partials/mainSection";
+@use "./partials/statisticsSection";
+@use "./partials/footer";
+@use "./partials/form";
+@use "./partials/boostLinksSection";
+@use "./partials/shortenLinksList";
+@use "./partials/mediaQuery";
 
 form {
     background-image: url("../images/bg-shorten-desktop.svg")

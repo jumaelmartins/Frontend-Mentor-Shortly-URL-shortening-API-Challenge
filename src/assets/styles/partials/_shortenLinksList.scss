@@ -1,0 +1,92 @@
+@use "variables";
+@use "base";
+
+
+.shortenLinks {
+    background-color: map-get(variables.$neutralColors, lightGray);
+    display: flex;
+    padding: 8rem 0;
+    ul {
+      min-width: 80%;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      max-width: 100%;
+      li {
+        height: 6rem;
+        background-color: white;
+        width: 100%;
+        margin: 1rem 0;
+        
+  
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 0.3rem;
+        padding: 1rem;
+  
+        a {
+          margin: 0 1rem;
+        }
+      }
+    }
+  }
+  
+  .shortenLinks > ul > li > :nth-child(1) {
+    a {
+      font-size: 1.5rem;
+      color: map-get(variables.$neutralColors, veryDarkViolet);
+    }
+  }
+  
+  .shortenLinks > ul > li > :nth-child(2) {
+    display: flex;
+    align-items: center;
+    max-height: 100%;
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+  
+  .shortenLinks > ul > li > :nth-child(2) > :nth-child(1) {
+    font-size: 1.5rem;
+    color: map-get(variables.$primaryColors, cyan);
+  }
+  
+  .shortenLinks > ul > li > :nth-child(2) > :nth-child(2) {
+    background-color: map-get(variables.$primaryColors, cyan);
+    border-radius: 0.6rem;
+    align-items: center;
+    justify-content: center;
+  
+    font-size: 1.3rem;
+    display: flex;
+    color: white;
+    cursor: pointer;
+  
+    max-width: 100%;
+    width: 10rem;
+    height: 4rem;
+    &:hover {
+      background-color: map-get(variables.$primaryColors, lightCyan);
+    }
+  
+    &:active {
+      background-color: map-get(variables.$neutralColors, veryDarkBlue);
+    }
+  }
+  
+  .trash {
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 100%;
+    margin: 0;
+    background-color: map-get(variables.$neutralColors, lightGray);
+    cursor: pointer;
+  
+    &:hover {
+      background-color: map-get(variables.$neutralColors, veryDarkBlue);
+      color: white;
+    }
+  }
+  

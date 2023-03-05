@@ -1,0 +1,60 @@
+@use "variables";
+@use "base";
+
+
+header {
+  position: relative;
+  display: flex;
+  max-width: 80%;
+  margin: 6rem auto;
+  align-items: center;
+  height: 6rem;
+  h1 {
+    display: flex;
+  }
+
+  nav {
+    
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 1.4rem;
+    align-items: center;
+
+    a {
+      color: map-get(variables.$neutralColors, grayishViolet);
+      &:hover {
+        color: map-get(variables.$primaryColors, darkViolet);
+      }
+    }
+  }
+}
+
+nav > :nth-child(2) {
+  display: flex;
+  margin: 0 1rem;
+  a {
+    margin: 0 2rem;
+  }
+}
+
+nav > :nth-child(3) {
+  display: flex;
+  align-items: center;
+
+  :nth-child(1) {
+    margin: 0 2.5rem;
+  }
+  :nth-child(2) {
+    background-color: map-get(variables.$primaryColors, cyan);
+    border-radius: 2.2rem;
+    padding: 0.5rem 2rem;
+    display: flex;
+    color: white;
+    cursor: pointer;
+
+    &:hover {
+      background-color: map-get(variables.$primaryColors, lightCyan);
+    }
+  }
+}

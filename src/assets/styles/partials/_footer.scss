@@ -1,0 +1,65 @@
+@use "variables";
+@use "base";
+
+footer {
+    background-color: map-get(variables.$neutralColors, veryDarkViolet);
+    display: flex;
+    flex-direction: column;
+    min-height: 20rem;
+    align-items: center;
+  
+    div {
+      color: white;
+      a {
+        color: inherit;
+      }
+    }
+  
+    ul {
+      max-width: 80%;
+      margin: auto;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+    }
+  }
+  
+  
+  footer > ul > :nth-child(2) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+  }
+  
+  footer > ul > :nth-child(2) > div {
+    display: flex;
+    flex-direction: column;
+    margin: 0 2rem;
+    h6 {
+      font-size: 1.6rem;
+    }
+  
+    a {
+      font-size: 1.3rem;
+      color: map-get(variables.$neutralColors, gray);
+  
+      &:hover {
+        color: map-get(variables.$primaryColors, cyan);
+      }
+    }
+  }
+  
+  footer > ul > :nth-child(3) > svg {
+    margin: 0 0.5rem;
+    cursor: pointer;
+    fill: white;
+  
+    &:hover {
+      fill: map-get(variables.$primaryColors, cyan);
+    }
+  }
+  
+  footer > ul > :nth-child(3) {
+      display: flex;
+  }

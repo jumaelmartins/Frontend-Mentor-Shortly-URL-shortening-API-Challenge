@@ -1,0 +1,38 @@
+@use "variables";
+@use "base";
+
+.boostLinks {
+    background-color: map-get(variables.$primaryColors, darkViolet);
+    display: flex;
+    flex-direction: column;
+    min-height: 20rem;
+    align-items: center;
+    justify-content: center;
+  
+    background-image: url("../../../../src/assets/images/bg-boost-desktop.svg");
+    background-size: cover;
+  
+    h2 {
+      color: white;
+      font-size: 4rem;
+    }
+  
+    a {
+      background-color: map-get(variables.$primaryColors, cyan);
+      border-radius: 2.2rem;
+      align-items: center;
+      justify-content: center;
+  
+      font-size: 1.3rem;
+      display: flex;
+      color: white;
+      cursor: pointer;
+  
+      margin: 2rem 0;
+      width: 14rem;
+      height: 4rem;
+      &:hover {
+        background-color: map-get(variables.$primaryColors, lightCyan);
+      }
+    }
+  }

@@ -1,0 +1,52 @@
+@use "variables";
+@use "base";
+
+
+main > article {
+    max-width: 80%;
+    margin: auto;
+    padding: 6rem 0 14rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  
+    img {
+      width: 600px;
+      max-width: 100%;
+    }
+  }
+  
+  main > article > :nth-child(1) {
+    h2 {
+      font-size: 6rem;
+      line-height: 7rem;
+    }
+  
+    p {
+      font-size: 1.8rem;
+      color: map-get(variables.$neutralColors, gray);
+    }
+  
+    a {
+      background-color: map-get(variables.$primaryColors, cyan);
+      border-radius: 2.2rem;
+      align-items: center;
+      justify-content: center;
+  
+      font-size: 1.3rem;
+      display: flex;
+      color: white;
+      cursor: pointer;
+  
+      margin: 4rem 0;
+      width: 14rem;
+      height: 4rem;
+      &:hover {
+        background-color: map-get(variables.$primaryColors, lightCyan);
+      }
+    }
+  }
+  
+  main {
+    position: relative;
+  }

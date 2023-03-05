@@ -1,0 +1,77 @@
+@use "variables";
+@use "base";
+
+form {
+  position: absolute;
+  width: 80%;
+  border-radius: 1rem;
+
+  padding: 2rem;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin: auto;
+  background-image: url("../../../../src/assets/images/bg-shorten-desktop.svg");
+  background-color: map-get(variables.$primaryColors, darkViolet);
+  bottom: -6rem;
+
+  left: 0;
+  right: 0;
+
+  input,
+  button {
+    border-radius: 1rem;
+    height: 5rem;
+    border: none;
+    font-size: 1.8rem;
+    flex-shrink: 3;
+    margin: 0 2rem;
+    margin-top: 0rem;
+  }
+
+  input {
+    padding: 2rem;
+    outline: none;
+    width: 97%;
+    max-width: 100%;
+  }
+
+  button {
+    font-weight: 700;
+    width: 18rem;
+    cursor: pointer;
+    color: white;
+    background-color: map-get(variables.$primaryColors, cyan);
+    
+
+    &:hover {
+      background-color: map-get(variables.$primaryColors, lightCyan);
+    }
+  }
+
+  .warning {
+    outline: solid 2px red;
+  }
+
+  fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+
+    max-width: 100%;
+    justify-content: center;
+    height: 8rem;
+    align-items: flex-start;
+
+    label {
+      margin-left: 2rem;
+      margin-bottom: -2rem;
+      color: red;
+      font-size: 1.3rem;
+    }
+  }
+}
+
+form > :nth-child(1) {
+  width: 80%;
+}
